@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   res.redirect('/blogs');
 });
 
-// INDEX
+// INDEX ROUTE:
 app.get('/blogs', (req, res) => {
   Blog.find({}, (err, blogs) => {
     if (err) {
@@ -34,6 +34,12 @@ app.get('/blogs', (req, res) => {
     }
   });
 });
+
+// NEW ROUTE:
+app.get('/blogs/new', (req, res) => {
+  res.render('new');
+});
+// CREATE ROUTE:
 
 app.listen(PORT, () => {
   console.log('Server is running in localhost:3000');
