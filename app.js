@@ -1,4 +1,4 @@
-const bodyParser = require('body-parser'),// Parser.
+const bodyParser   = require('body-parser'),// Parser.
        mongoose   = require('mongoose'),// DB.
        express    = require('express'),// Node Lib.
        PORT       = 3000,
@@ -39,7 +39,19 @@ app.get('/blogs', (req, res) => {
 app.get('/blogs/new', (req, res) => {
   res.render('new');
 });
+
 // CREATE ROUTE:
+app.post('/blogs', (req, res) => {
+  // Create Blog
+  Blog.create(req.body.blog, (err, newBlog) => {
+    if (err) {
+      res.render('new');
+    } else {
+      // then, redirect
+      res.redirect('/blogs');
+    }
+  });
+});
 
 app.listen(PORT, () => {
   console.log('Server is running in localhost:3000');
