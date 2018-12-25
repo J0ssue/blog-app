@@ -54,6 +54,18 @@ app.post('/blogs', (req, res) => {
   });
 });
 
+// SHOW ROUTE:
+app.get('/blogs/:id', (req, res) => {
+  // find blog by id and render it:
+  Blog.findById(req.params.id, (err, blog) => {
+    if (err) {
+      res.redirect('/blogs');
+    } else {
+      res.render('show', { blog });
+    }
+  });
+});
+
 app.listen(PORT, () => {
   console.log('Server is running in localhost:3000');
 });

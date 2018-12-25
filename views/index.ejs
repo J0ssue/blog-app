@@ -1,11 +1,12 @@
 <% include ./partials/header %>
 
 <% blogs.forEach((blog) => { %>
-  <div class="mt">
+  <div class="ui container mt mb">
       <h2><%= blog.title %></h2>
       <img src="<%= blog.image %>" alt="image">
-      <p><%= blog.created %></p>
-      <p><%= blog.body %></p>
+      <p><%= blog.created.toDateString() %></p>
+      <p><%= blog.body.substring(0, 100) %>...</p>
+      <a href="/blogs/<%= blog._id %>">Read More</a>
   </div>
 <% }) %>
 
