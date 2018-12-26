@@ -1,6 +1,6 @@
 //      RESTFUL API ROUTING APP      //
 const bodyParser   = require('body-parser'),// Parser.
-methodOverride     = require('method-override');
+methodOverride     = require('method-override'),
 mongoose           = require('mongoose'),// DB.
 express            = require('express'),// Node Lib.
 PORT               = 3000, //Port
