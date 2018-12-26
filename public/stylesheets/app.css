@@ -6,6 +6,14 @@ i.icon {
   margin-top: 80px;
 }
 
+.mb {
+  margin-bottom: 100px;
+}
+
 .container.main {
   margin-top: 7.0em;
+}
+
+.lighter {
+  color: gray;
 }
