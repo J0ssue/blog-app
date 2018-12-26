@@ -12,6 +12,11 @@
         </div>
       </div>
     </div>
-    <a class="ui inverted purple button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+    <div id="show-controls">
+      <a class="ui inverted big purple button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+      <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+        <button class="ui red big inverted button">Delete</button>
+      </form>
+    </div>
   </div>
 <% include ./partials/footer %>

@@ -93,7 +93,15 @@ app.put('/blogs/:id', (req, res) => {
 
 // DESTROY ROUTE:
 app.delete('/blogs/:id', (req, res) => {
-  res.send('you have reached the destroy route');
+  // destroy blog
+  Blog.findByIdAndRemove(req.params.id, (err) => {
+    if (err) {
+      res.redirect('/blogs');
+    } else {
+      // redirect somewhere
+      res.redirect('/blogs');
+    }
+  });
 });
 
 app.listen(PORT, () => {
